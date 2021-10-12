@@ -41,10 +41,10 @@ file at https://signals.numer.ai/tournament
 # Next Steps
 The example model is a good baseline model, but we can do much better. There are three
 main paths for improving your Signals model: finding better data, improving your
-feature engineering, and improving your modeling.
+features, and improving your modeling.
 
 ### Data pipeline
-The `example_data_pipeline.py` script shows how we use the community-led Open Signals package
+The `example_data_pipeline.py` script shows how we use the Open Signals package
 to easily get pricing data and use it to create technical features.
 [Open Signals](https://github.com/councilofelders/opensignals) is a repository created by 
 the Numerai Council of Elders. The goal is to create a single source for users to get 
