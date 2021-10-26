@@ -35,7 +35,7 @@ def main(output_dir=None):
     diagnostic_df = tournament.copy()
     diagnostic_df['data_type'] = diagnostic_df.data_type.fillna('live')
 
-    example_signal_output_path = 'example_training_data_yahoo.csv'
+    example_signal_output_path = 'example_signal_yahoo.csv'
     if output_dir is not None:
         os.makedirs(output_dir, exist_ok=True)
         example_signal_output_path = f'{output_dir}/example_signal_yahoo.csv'

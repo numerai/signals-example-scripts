@@ -32,6 +32,10 @@ def main(output_dir=None):
     training_data_output_path = 'example_training_data_yahoo.csv'
     tournament_data_output_path = 'tournament_data_yahoo.csv'
 
+    train['friday_date'] = train['friday_date'].astype('int16')
+    test['friday_date'] = test['friday_date'].astype('int16')
+    live['friday_date'] = live['friday_date'].astype('int16')
+
     if output_dir is not None:
         os.makedirs(output_dir, exist_ok=True)
         training_data_output_path = f'{output_dir}/example_training_data_yahoo.csv'
