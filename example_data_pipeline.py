@@ -34,7 +34,6 @@ def main(output_dir=None):
 
     train['friday_date'] = train['friday_date'].astype('int16')
     test['friday_date'] = test['friday_date'].astype('int16')
-    live['friday_date'] = live['friday_date'].astype('int16')
 
     if output_dir is not None:
         os.makedirs(output_dir, exist_ok=True)
