@@ -49,4 +49,4 @@ if __name__ == '__main__':
     parser.add_argument('--output_dir', default=None)
 
     args = parser.parse_args()
-    main()
+    main(args.output_dir)
