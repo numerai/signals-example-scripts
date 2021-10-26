@@ -1,4 +1,5 @@
-
+import argparse
+import os
 import pandas as pd
 from halo import Halo
 from sklearn.ensemble import GradientBoostingRegressor
@@ -9,7 +10,7 @@ PREDICTION_NAME = 'signal'
 spinner = Halo(text='', spinner='dots')
 
 
-def main():
+def main(output_dir=None):
     """Creates example_signal_yahoo.csv to upload for validation and live data submission"""
 
     spinner.start('Reading data')
@@ -33,9 +34,19 @@ def main():
     spinner.start('Writing signal upload file')
     diagnostic_df = tournament.copy()
     diagnostic_df['data_type'] = diagnostic_df.data_type.fillna('live')
-    diagnostic_df[['bloomberg_ticker', 'friday_date', 'data_type', 'signal']].reset_index(drop=True).to_csv('example_signal_yahoo.csv', index=False)
+
+    example_signal_output_path = 'example_training_data_yahoo.csv'
+    if output_dir is not None:
+        os.makedirs(output_dir, exist_ok=True)
+        example_signal_output_path = f'{output_dir}/example_signal_yahoo.csv'
+
+    diagnostic_df[['bloomberg_ticker', 'friday_date', 'data_type', 'signal']].reset_index(drop=True).to_csv(example_signal_output_path, index=False)
     spinner.succeed()
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Signals example data pipeline')
+    parser.add_argument('--output_dir', default=None)
+
+    args = parser.parse_args()
     main()
