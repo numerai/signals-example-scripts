@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 from pathlib import Path
 
@@ -23,8 +24,13 @@ spinner.start('Generating features')
 train, test, live, feature_names = yahoo.get_data(db_dir,
                                                   features_generators=features_generators,
                                                   feature_prefix='feature')
-train.to_csv('example_training_data_yahoo.csv')
+
+# TODO: just doing this for testing
+path = '/var/opt/signals'
+os.makedirs(path, exist_ok=True)
+
+train.to_csv(f'{path}/example_training_data_yahoo.csv')
 tournament_data = pd.concat([test, live])
-tournament_data.to_csv('example_tournament_data_yahoo.csv')
+tournament_data.to_csv(f'{path}/example_tournament_data_yahoo.csv')
 
 spinner.succeed()
