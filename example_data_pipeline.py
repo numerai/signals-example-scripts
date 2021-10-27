@@ -32,8 +32,8 @@ def main(output_dir=None):
     training_data_output_path = 'example_training_data_yahoo.csv'
     tournament_data_output_path = 'tournament_data_yahoo.csv'
 
-    train['friday_date'] = train['friday_date'].astype('int16')
-    test['friday_date'] = test['friday_date'].astype('int16')
+    train['friday_date'] = pd.to_datetime(train['friday_date'], format='%Y%m%d')
+    test['friday_date'] = pd.to_datetime(test['friday_date'], format='%Y%m%d')
 
     if output_dir is not None:
         os.makedirs(output_dir, exist_ok=True)
