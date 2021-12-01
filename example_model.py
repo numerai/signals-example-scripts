@@ -35,10 +35,10 @@ def main(output_dir=None):
     diagnostic_df = tournament.copy()
     diagnostic_df['data_type'] = diagnostic_df.data_type.fillna('live')
 
-    example_signal_output_path = 'example_signal_yahoo.csv'
+    example_signal_output_path = 'example_signal.csv'
     if output_dir is not None:
         os.makedirs(output_dir, exist_ok=True)
-        example_signal_output_path = f'{output_dir}/example_signal_yahoo.csv'
+        example_signal_output_path = f'{output_dir}/{example_signal_output_path}'
 
     diagnostic_df[['bloomberg_ticker', 'friday_date', 'data_type', 'signal']].reset_index(drop=True).to_csv(example_signal_output_path, index=False)
     spinner.succeed()
