@@ -47,7 +47,7 @@ the Numerai Council of Elders. The goal is to create a single source for users t
 access to financial datasets and pre-made feature engineering.
 
 ### Modeling
-The example model is a good baseline model, but we can do much better. Check out the [forums](https://forum.numer.ai/c/signals/10) 
+The example model included in this model is very basic. Check out the [forums](https://forum.numer.ai/c/signals/10) 
 for in depth discussions on model research.
 
 ### Automation
