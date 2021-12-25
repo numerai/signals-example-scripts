@@ -21,7 +21,6 @@ def main(output_dir=None):
     feature_names = train.filter(like='feature_').columns.to_list()
 
     spinner.start('Training model')
-    train = train.dropna(subset=[TARGET_NAME] + feature_names)
     model = GradientBoostingRegressor(subsample=0.1)
     model.fit(train[feature_names], train[TARGET_NAME])
     spinner.succeed()
