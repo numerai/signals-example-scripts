@@ -4,7 +4,7 @@ import pandas as pd
 from pathlib import Path
 
 from halo import Halo
-from opensignals.data import yahoo
+from opensignals.data.yahoo import Yahoo
 from opensignals.features import RSI, SMA
 
 spinner = Halo(text='', spinner='dots')
@@ -14,6 +14,7 @@ def main(output_dir=None):
 
     db_dir = Path('db')
 
+    yahoo = Yahoo()
     yahoo.download_data(db_dir)
 
     features_generators = [
