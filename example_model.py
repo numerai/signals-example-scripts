@@ -29,7 +29,7 @@ def main(output_dir=None):
     spinner.start('Predicting test and live data')
 
     # drop rows where target or features are null
-    tournament = tournament.dropna(subset=['target'] + feature_names)
+    tournament = tournament.dropna(subset=feature_names)
     tournament[PREDICTION_NAME] = model.predict(tournament[feature_names])
     spinner.succeed()
 
