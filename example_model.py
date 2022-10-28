@@ -18,7 +18,7 @@ def main(output_dir=None):
     tournament = pd.read_csv('example_tournament_data_yahoo.csv')
     spinner.succeed()
 
-    feature_names = train.filter(like='feature_').columns.to_list()
+    feature_names = [c for c in train if c.startswith("feature_")]
 
     spinner.start('Training model')
     model = GradientBoostingRegressor(subsample=0.1)
