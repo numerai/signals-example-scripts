@@ -31,7 +31,7 @@ def main(output_dir=None):
                                                       feature_prefix='feature')
 
     training_data_output_path = 'example_training_data_yahoo.csv'
-    tournament_data_output_path = 'tournament_data_yahoo.csv'
+    tournament_data_output_path = 'example_tournament_data_yahoo.csv'
 
     train['friday_date'] = pd.to_datetime(train['friday_date'], format='%Y%m%d')
     test['friday_date'] = pd.to_datetime(test['friday_date'], format='%Y%m%d')
