@@ -133,3 +133,4 @@ dmypy.json
 db/
 *.csv
 signals/
+.DS_Store
